@@ -1,0 +1,331 @@
+/* Matthew James Carpenter */
+
+/* Remember the specificity rules! Ect>ID>Class>Element*/
+
+/* ----- Reset all ----- */
+
+html, body, div, span, applet, object, iframe, p, blockquote, pre, a, abbr, acronym, address, big, cite, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+    margin: 0 25%;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    font-family: 'Luckiest Guy', cursive, sans-serif;
+}
+
+header {
+    background-color: #f4f4f4;
+    position: sticky;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+#playground {
+    z-index: 10; /* otherwise stuff will float over it*/
+    position: sticky;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    height: 260px;
+    background-color: #bdc3c7;
+}
+
+section {
+    width: 100%;
+    padding: 10px;
+    border-radius: .5em;
+    margin-bottom: 1em;
+}
+
+#section-1 { /* SIZE */
+    background-color: #f4f4f4;
+}
+
+#section-1 div {
+    margin-bottom: 1em;
+}
+
+#section-1 button {
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 150%;
+    border-radius: 10%;
+}
+
+button:hover {
+    background-color: #7f8c8d;
+}
+
+#section-2 {
+    background-color: #fff;
+}
+
+#section-3 {
+    background-color: #f4f4f4;
+}
+
+#section-4 {
+    background-color: #fff;
+}
+
+#section-5 {
+    background-color: #f4f4f4;
+}
+
+#section-6 {
+    background-color: #fff;
+}
+
+#section-7 {
+    background-color: #f4f4f4;
+}
+
+#section-8 {
+    background-color: #fff;
+}
+
+#section-9 {
+    background-color: #f4f4f4;
+}
+
+#section-10 {
+    background-color: #fff;
+}
+
+#section-11 {
+    background-color: #f4f4f4;
+}
+
+#parent {
+    position: relative;
+    width: 255px;
+    height: 255px;
+    border: 1px dashed #7f8c8d;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #fff;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+#child {
+    transition: width .2s, height .2s, transform .2s, border-radius .2s;
+    border-radius: 1px;
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%,-50%); /* true center */
+}
+
+/* ----- BUTTONS ----- */
+
+button {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 100%;
+    border: none;
+}
+
+#button4 {
+    background-color: #e74c3c;
+
+}
+#button4:hover {
+    background-color: #eb685a;
+}
+
+.button { /*this is the class button not the element.*/
+    text-align: center;
+    background-color: #3498db;
+    display: inline-block;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px solid #000;
+    transition: background-color .2s, border .2s;
+    text-transform: none;
+}
+
+.button:hover { /*this is the class 'button' not the element type*/
+    cursor: pointer;
+    background-color: #51a7e0;
+}
+
+#color {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #3498db;
+}
+
+#positions .button:hover {
+    background-color: #7f8c8d;
+}
+
+/* ----- the moving dot ----- */
+
+#playArea {
+    position: relative;
+    width: 16em;
+    height: 12em;
+    border: 1px solid black;
+    overflow: hidden;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+#player {
+    position: absolute;
+    z-index: 5;
+    width: 1em;
+    margin-top: 3em;
+    margin-left: 3em;
+    height: 1em;
+    background-color: #2ecc71;
+    transition: margin .25s;
+}
+
+.large-font {
+    font-size: 200%;
+}
+
+/* ----- SHAPE ----- */
+
+#rounded {
+    position: relative;
+    width: 10em;
+    padding: 1em;
+    margin-left: 50%;
+    margin-top: 1em;
+    transform: translate(-50%);
+}
+
+#shape {
+    margin: 25px 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #a29bfe;
+    border-radius: 0px;
+    transition: border-radius .4s; /* makes border-radius transitions smooth */
+}
+
+#round-edge {
+    width: 50px;
+    height: 50px;
+    background-color: #a29bfe;
+    border-radius: .5em;
+}
+
+#square-edge {
+    width: 50px;
+    height: 50px;
+    background-color: #a29bfe;
+    border-radius: 0em;
+}
+
+#no-edge {
+    width: 50px;
+    height: 50px;
+    background-color: #a29bfe;
+    border-radius: 50%;
+}
+
+#rounded button:hover{
+    background-color: #6c5ce7;
+}
+
+#positions button {
+    background-color: #e3e3e3;
+}
+
+#list-margin li {
+    text-align: center;
+    list-style: none;
+}
+#list-margin label {
+    display: inline-block;
+    left: 0;
+    width: 5em;
+}
+
+#list-margin button {
+    margin: 4px;
+}
+
+#list-margin input{
+    width: 5em;
+    height: 1.5em;
+    margin-right: 1em;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#code-wrapper {
+    width: 50%;
+    height: auto;
+    margin: 1em;
+    margin-top: .5em;
+    text-align: left;
+    transform: translate(37%);
+}
+
+/* ----- Size Buttons ----- */
+
+#size-px {
+    background-color:  #c7cdcd;
+    transition: background-color .2s;
+}
+
+#size-px:hover {
+    background-color: #3498db;
+    color: #fff;
+    transition: background-color .2s;
+}
+
+#size-percent {
+    background-color:  #c7cdcd;
+    transition: background-color .2s;
+}
+
+#size-percent:hover {
+    background-color: #3498db;
+    color: #fff;
+    transition: background-color .2s;
+}
+
+#size-em {
+    background-color:  #c7cdcd;
+    transition: background-color .2s;
+}
+
+#size-em:hover {
+    background-color: #3498db;
+    color: #fff;
+    transition: background-color .2s;
+}
+
+#size-number {
+    height: 25px;
+}
+
+#grow-number {
+    height: 25px;
+    width: 50px;
+}
+
+/* ----- COLOR LABLES ----- */
+
+.orange {
+    color: #e67e22;
+}

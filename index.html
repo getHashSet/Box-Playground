@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jiggle Into JavaScript</title>
+    <link rel="stylesheet"  href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2>The Box playground!</h2>
+        </header>
+    <section id="playground"> <!--section box-->
+        <div id="parent">
+            <div id="child" style="height: 10px; width: 10px;"></div>
+        </div>
+        </section> <!-- End of playground -->
+    <section id="section-1"> <!-- Section: Select a Size -->
+            <h2>Play with size!</h2>
+            <div id="sizeSelect">
+                <input type="number" id="size-number">
+                <button type="button" id="size-px" onclick="Size('px')">PX</button>
+                <button type="button" id="size-em" onclick="Size('em')">EM</button>
+                <button type="button" id="size-percent" onclick="Size('per')">&percnt;</button>
+            </div>
+        </section>
+    <section id="section-2"> <!-- Section: Size -->
+        <h2>Grow</h2>
+        <button class="button" type="button" id="button1" onclick="GrowFunction('grow-b')">+</button>
+        <label> Both </label>
+        <button class="button" type="button" id="button1" onclick="GrowFunction('shrink-b')">-</button>
+        <br>
+        <button class="button" type="button" id="button1" onclick="GrowFunction('grow-x')">+</button>
+        <label class="large-font"> x </label>
+        <button class="button" type="button" id="button1" onclick="GrowFunction('shrink-x')">-</button>
+        <input type="number" id="grow-number">
+        <button class="button" type="button" id="button1" onclick="GrowFunction('grow-y')">+</button>
+        <label  class="large-font"> Y </label>
+        <button class="button" type="button" id="button1" onclick="GrowFunction('shrink-y')">-</button>
+        </section>
+    <section id="section-3"> <!-- Section: Color -->
+        <h2>Color</h2><br>
+            <input type="color" id="color"><br>
+            <button class="button" id="button2" onclick="ChangeColor()">Color</button>
+        </section>
+    <section id="section-4"> <!-- Section: Fade -->
+        <h2>Fade</h2>
+            <button class="button" id="button3" onclick="GetFaded()"> &MediumSpace; Fade &MediumSpace;  </button>
+            <br>
+            <input class="slider" id="fade-value" type="range" min="1" max="100" value="50"><span id="slideValue"></span>
+        </section>
+    <section id="section-5"> <!-- Section: Spin -->
+        <h2>Spin</h2>
+            <button class="button" id="button5" onclick="DABR()">Spin</button>
+        </section>
+    <section id="section-6"> <!-- Section: Border -->
+        <h2>Border</h2>
+        <input type="number" id="input-border" placeholder="0 pixels">
+        <button id="border-solid" onclick="Border('solid')">solid</button>
+        <button id="border-dot" onclick="Border('dot')">Dotted</button>
+        <button id="border-dash" onclick="Border('dash')">dashes</button>
+        <input id="color-border" type="color">
+        <br>
+        <br>
+        <h3>Border Bottom</h3>
+        <input type="number" id="input-border2" placeholder="0 pixels">
+        <button id="border-solid2" onclick="Border2('solid')">solid</button>
+        <button id="border-dot2" onclick="Border2('dot')">dotted</button>
+        <button id="border-dash2" onclick="Border2('dash')">dashes</button>
+        <input type="color" id="color-border2">
+        <br>
+        </section>
+    <section id="section-7"> <!-- Section: Shape -->
+        <h2>Shape</h2>
+        <div id="rounded">
+                <button id="square-edge" onclick="ChangeShape(1)"></button>
+                <button id="round-edge" onclick="ChangeShape(2)"></button>
+                <button id="no-edge" onclick="ChangeShape(3)"></button>
+        </div>
+        </section>
+    <section id="section-8"> <!-- Section: Position -->
+        <h2>Position</h2>
+            <div id="positions">
+                <button onclick="positionType('static')">Static</button>
+                <button onclick="positionType('absolute')">Absolute</button>
+                <button onclick="positionType('relative')">Relative</button>
+                <br>
+                <button id="button-l" onclick="positionNew('l')">left</button>
+                <button id="button-r" onclick="positionNew('r')">right</button>
+                <button id="button-t" onclick="positionNew('t')">top</button>
+                <button id="button-b" onclick="positionNew('b')">bottom</button>
+                <br>
+            </div>
+        </section>
+    <section id="section-9"> <!-- Section: Margin -->
+        <h2>Margin</h2>
+        <ul id="list-margin">
+            <li><label>Top:</label><input type="number" placeholder="50%" id="input-margin-top"><button onclick="Margin('top','px')">PX</button><button onclick="Margin('top','em')">EM</button><button onclick="Margin('top','%')">&percnt;</button></li>
+            <br>
+            <li><label>Right:</label><input type="number" placeholder="0" id="input-margin-right"><button onclick="Margin('right','px')">PX</button><button onclick="Margin('right','em')">EM</button><button onclick="Margin('right','%')">&percnt;</button></li>
+            <br>
+            <li><label>Bottom:</label><input type="number" placeholder="0" id="input-margin-bottom"><button onclick="Margin('bottom','px')">PX</button><button onclick="Margin('bottom','em')">EM</button><button onclick="Margin('bottom','%')">&percnt;</button></li>
+            <br>
+            <li><label>Left:</label><input type="number" placeholder="50%" id="input-margin-left"><button onclick="Margin('left','px')">PX</button><button onclick="Margin('left','em')">EM</button><button onclick="Margin('left','%')">&percnt;</button></li>
+            <br>
+        </ul>   
+        </section>
+    <section id="section-10"> <!-- Section: Reset -->
+        <h2>Reset</h2>
+            <button class="button reset" id="button4" onclick="Reset()">Reset</button>
+        </section>
+    <section id="section-11"> <!-- Section: Code-->
+            <h2>CSS3</h2>
+            <button type="button" class="button" id="button-getcss" onclick="CodeUpdate()">Get Css!</button>
+            <div id="code-wrapper">
+                <code id="code-box">
+                    #child-object {<br>
+                    position = absolute; <br>
+                    margin-Top = 50%;<br>
+                    margin-Right = '';<br>
+                    margin-Bottom = '';<br>
+                    margin-Left = 50%;<br>
+                    }<br>
+                </code>
+            </div>
+        </section>
+    <section id="section-12"> <!--section two-->
+    <br> <!--dont judge me.-->
+    <h2>Bonus!</h2>
+        <div id="theGame">
+            <div id="playArea"> <!-- Parent object -->
+                <div id="player"></div> <!--This is the object being moved.-->
+            </div> <!--playArea div-->
+            <button id="left" onkeyup="wasd(event)" onclick="Move(left)">left</button>
+            <button id="right" onkeyup="wasd(event)" onclick="Move(right)">right</button>
+            <button id="down" onkeyup="wasd(event)" onclick="Move(down)">down</button>
+            <button id="up" onkeyup="wasd(event)" onclick="Move(up)">up</button>
+        </div> <!--theGame div-->
+    </section>
+    
+    <!--loading .js files last that way the CSS and HTML render before the browser.-->
+    <script type="text/javascript" src="javascript.js"></script>
+
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+</body>
+</html>
